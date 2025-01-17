@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStore } from '../context/Context';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ function Result() {
   const {courseData,dayCount,courseNames,resetData} = useStore();  
   
   console.log("courseData:", courseData);
-console.log("courseNames:", courseNames);
+  console.log("courseNames:", courseNames);
 
 const extendedResetData = () => {
   resetData();
@@ -60,10 +60,6 @@ onClick={extendedResetData}>
     Reset Data
 </button>
 </div>
-        
-        
-        
-
       </div>
     </div>
     </>

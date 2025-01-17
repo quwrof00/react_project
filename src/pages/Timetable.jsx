@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useStore } from '../context/Context';  // Import useStore from context
+import { useStore } from '../context/Context';  
 import { useNavigate } from 'react-router-dom';
 
 function Timetable() {
     const [courseCount, setCourseCount] = useState(5);
     const {courseData,updateCourseData,courseNames,updateCourseNames} = useStore();
-
     const navigate = useNavigate();
 
     const toCalculatePage = () => {
@@ -13,7 +12,7 @@ function Timetable() {
     }
     
     const handleCheckboxChange = (index, day, checked) => {
-        updateCourseData(index, day, checked);  // Update courseData when checkbox changes
+        updateCourseData(index, day, checked);  
     };
 
     const handleCourseNameChange = (index,value) => {
@@ -46,8 +45,8 @@ function Timetable() {
                                             type="checkbox" 
                                             id={`${day}-${index}`}
                                             checked={courseData[index]?.[day] || false}
-  // Access data from context
-                                            onChange={(e) => handleCheckboxChange(index, day, e.target.checked)}  // Update context on change
+
+                                            onChange={(e) => handleCheckboxChange(index, day, e.target.checked)}  
                                         />
                                         <label
                                             htmlFor={`${day}-${index}`}
@@ -60,17 +59,19 @@ function Timetable() {
                             </div>
                         ))}
                     </div>
+
                     {/* Add Course Button */}
                     <div className="mt-6">
                         <button
                             type="button"
                             className="flex items-center justify-center w-full px-4 py-2 text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-100 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                            onClick={() => setCourseCount(courseCount + 1)}  // Add more courses
+                            onClick={() => setCourseCount(courseCount + 1)}  
                         >
                             + Add More Courses
                         </button>
                     </div>
-                    {/* Save Button */}
+
+                    {/* {Submit Button} */}
                     <div className="mt-6 flex items-center justify-center">
                         <button
                             type="submit"

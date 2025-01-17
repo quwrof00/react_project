@@ -39,7 +39,7 @@ function Calculate() {
             </div>
           ))}
         </div>
-        {/* Save and Calculate Buttons */}
+        {/*Calculate Button*/}
         <div className="mt-6 flex justify-between">
           <button
             type="button"

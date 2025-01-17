@@ -1,11 +1,9 @@
 import React, {useRef} from 'react';
 import emailjs from '@emailjs/browser'
 import { useNavigate } from 'react-router-dom'
-import { useStore } from '../context/Context';
 
 function Auth() {
   const navigate = useNavigate();
-  const resetData = useStore();
   const form = useRef();
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const regnoPattern = /^\d{2}B[A-Z]{2}\d{4}$/;
@@ -42,11 +40,12 @@ function Auth() {
     );    
   }
 
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
   <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
     <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Authentication</h2>
+    
+    {/* {Authentication Form} */}
     <form ref={form} onSubmit={toTimetable}>
       <div className="mb-4">
         <label htmlFor="registrationNumber" className="block text-sm font-medium text-gray-700">
